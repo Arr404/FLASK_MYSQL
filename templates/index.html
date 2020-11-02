@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Uwaw</title>
+
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<form method="POST" action="">
+	<div class="form">
+    	<input type="text" id="user" name="user" placeholder="Username..">
+    	<input type="Password" id="passw" class="fas fa-eye" name="pass" placeholder="Password..">
+	</div>
+	<button type="submit" class="btn from-left">Login</button>
+	<p style="font-size:15px; ">Belum punya akun? <a class="a text" href="{{url_for('register')}}">Sign Up</a>         <a a class="kedua" href="{{url_for('lupa')}}">Lupa Password?</a></p>
+	</form>
+	<script type="text/javascript">
+		if("{{value}}" != ""){
+			alert("{{value}}")
+		}
+
+	</script>
+</body>
+</html>

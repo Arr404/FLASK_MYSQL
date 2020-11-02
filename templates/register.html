@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Uwaw</title>
+
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+	<form method="POST" name="form" action="" onsubmit="isempty()">
+	<div class="form">
+    	<input type="text" id="user" name="user" placeholder="Username..">
+    	<input type="Password" id="passw" name="pass" onkeyup='check();' placeholder="Password..">
+    	<input type="Password" id="confirm_password" name="" onkeyup='check();' placeholder="Masukkan kembali Password">
+  		<h3 id="message"></h6>
+    	<h3>Lupa password : Siapakah yang paling anda cintai</h3>
+    	<input type="text" id="lupa" name="lupa" placeholder="Siapapun/apapun....">
+	</div>
+	<button type="submit" class="btn from-left" id="submit" disabled>Sign Up</button>
+	</form>
+	
+
+	<script >
+		var check = function() {
+		  if (document.getElementById('passw').value ==
+		    document.getElementById('confirm_password').value) {
+		    document.getElementById('message').style.color = 'green';
+		    document.getElementById('message').innerHTML = 'matching';
+		    document.getElementById('submit').disabled = false;
+		  } else {
+		    document.getElementById('message').style.color = 'red';
+		    document.getElementById('message').innerHTML = 'not matching';
+		    document.getElementById('submit').disabled = true;
+		  }
+		}
+		function isempty() {
+			if(document.forms['form'].user.value === "" || document.forms['form'].pass.value === "" || document.forms['form'].lupa.value === ""){
+				alert("Masukkan semua data...")
+				return false;
+			}else{
+				alert("Data berhasil disimpan")
+				return true;
+			}
+		}
+	</script>
+</body>
+</html>
